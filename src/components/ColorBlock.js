@@ -5,18 +5,16 @@ import { getContrastText, hexToRgbArray } from '../utils/colorUtils'
 
 const ColorBlock = ({
   hex = '#000000',
-  size = null,
-  width = size || 175,
-  height = size || 175,
+  // size = null,
+  // width = size || 175,
+  // height = size || 175,
   ...props
 }) => {
-  const PADDING_RATIO = 0.18
   const [r, g, b] = hexToRgbArray(hex)
 
   const CoreBlockStyled = styled(CoreBlock)`
     ${'' /* width: ${width}px; */}
     ${'' /* height: ${height}px; */}
-    padding: ${height * PADDING_RATIO}px ${width * PADDING_RATIO}px;
     background-color: ${hex};
     color: ${getContrastText(hex)};
   `
@@ -34,12 +32,15 @@ const ColorBlock = ({
 }
 
 const Container = styled.div`
+  height: 100%;
   font-weight: bold;
 `
 
 const CoreBlock = styled.div`
-  min-width: 175px;
-  min-height: 175px;
+  height: 100%;
+  min-width: 150px;
+  min-height: 150px;
+  padding: 18%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
