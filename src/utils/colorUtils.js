@@ -3,6 +3,10 @@
 
 const CONTRAST_THRESHOLD = 3
 
+export function isValidHexColor(color) {
+  return color.charAt(0) === '#' && [4, 7].includes(color.length)
+}
+
 /**
  * Gets the appropriate contrasting text color given a background color.
  *
